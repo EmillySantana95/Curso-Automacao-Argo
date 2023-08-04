@@ -11,5 +11,10 @@
     "url": "(https://github.com/EmillySantana95/Cursp.git)"
   },
   "author": "Emilly Santana",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+
+    "cypress": "^12.17.3"
+
+  }
 }
