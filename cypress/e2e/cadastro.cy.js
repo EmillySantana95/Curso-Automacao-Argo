@@ -2,20 +2,21 @@
 const faker = require('faker-br')
 describe('Cadastro de usuários', () => {
     it('Deve efetuar cadastro inserindo CNH com método de entrega Moto', () => {
+
+        //FakerCadastro
         let fakerNomeCompleto = `${faker.name.firstName()} ${faker.name.lastName()}`
         console.log('FakerName: ' + fakerNomeCompleto)
         let fakerEmail = faker.internet.email()
         let fakerCpf = faker.br.cpf()
-        const dddsValido = ['11','21','31','41','48','61']
+        const dddsValido = ['11', '21', '31', '41', '48', '61']
         const dddEstado = faker.random.arrayElement(dddsValido)
-        const numeroTelefone = faker.random.number({min: 10000000 , max: 99999999})
+        const numeroTelefone = faker.random.number({ min: 10000000, max: 99999999 })
         const fakerTelefone = `(${dddEstado})9${numeroTelefone}`
+
         //FakerEndereço
         const fakerCep = faker.address.zipCodeValidByState()
         const fakerNumero = faker.address.streetAddress().match(/\d+/g).join('')
         const fakerComplemento = `Apto: ${faker.random.number({ min: 1, max: 300 })} Bloco:${faker.random.number({ min: 1, max: 3 })}`
-
-        console.log("Faker CPF: " + fakerCpf)
 
         //Acessa Publicação Buger-eats e valida que estamos na home
         cy.visit('https://buger-eats.vercel.app/')
